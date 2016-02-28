@@ -19,10 +19,12 @@ class XOWindow extends JFrame {
     JLabel label = new JLabel();
     private boolean gameEnded = false;
     XOWindow thisClass;
+    ImageIcon img = new ImageIcon("icon.png");
 
     public XOWindow() {
         super("XO");
         setCenter();
+        setIconImage(img.getImage());
         ArrayList<Color> clr = randomizeButtonColor();
         int ti = 0;
         int tj = 0;
@@ -65,7 +67,7 @@ class XOWindow extends JFrame {
             jbtn.setMinimumSize(btndim);
             jbtn.setPreferredSize(btndim);
         }
-    
+
         label.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -279,7 +281,7 @@ class XOWindow extends JFrame {
             }
         }
         if (endingtemp > 8) {
-            labelSetText("Оба просрали :(");
+            labelSetText("Оба проиграли :(");
             gameClose();
         }
     }
